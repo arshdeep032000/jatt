@@ -9,6 +9,7 @@ namespace c0730385
 {
     class arshdeep
     {
+        static int i = 0;
         static void Main(string[] args)
         {
             MethodA();
@@ -17,11 +18,16 @@ namespace c0730385
         {
             while (peanut())
             {
-                Console.WriteLine("i am stuck in an infinite loop");
+                Console.WriteLine(i);
+                if(i>10)
+                {
+                    return;
+                }
             }
         }
         public static bool peanut()
         {
+            i++;
             return true;
         }
 
